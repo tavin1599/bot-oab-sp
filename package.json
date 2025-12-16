@@ -1,0 +1,33 @@
+{
+  "name": "bot-oab-tjsp",
+  "version": "1.0.0",
+  "description": "Bot Telegram para consultar processos por OAB no TJSP (1º Grau / CPOPG) usando Playwright.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "install-playwright": "playwright install chromium",
+    "update-playwright": "playwright install --with-deps"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
+    "node-cache": "^5.1.2",
+    "pdfkit": "^0.17.2",
+    "playwright": "^1.57.0",
+    "playwright-extra": "^4.3.6",
+    "puppeteer": "^24.32.1",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "telegraf": "^4.16.3"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "tj-sp",
+    "oab",
+    "cpopg",
+    "playwright"
+  ],
+  "author": "C.M",
+  "license": "MIT"
+}
