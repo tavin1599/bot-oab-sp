@@ -91,9 +91,12 @@ async function buscarListaPorOAB(oab) {
     console.log(`🌐 Abrindo CPOPG para OAB ${oab}...`);
 
     await page.goto('https://esaj.tjsp.jus.br/cpopg/open.do', {
-      waitUntil: 'domcontentloaded',
-      timeout: NAV_TIMEOUT
-    });
+  waitUntil: 'domcontentloaded',
+  timeout: NAV_TIMEOUT
+});
+
+// 👇 ADICIONA AQUI
+console.log('📄 HTML:', await page.content());
     await humanDelay();
 
     await page.selectOption('#cbPesquisa', 'NUMOAB').catch(()=>{});
