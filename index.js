@@ -543,13 +543,15 @@ process.on('SIGINT', async () => {
   try { if (browser) await browser.close(); } catch(e){}
   process.exit(0);
 });
+
 process.on('SIGTERM', async () => {
   try { if (browser) await browser.close(); } catch(e){}
-  (async () => {
-  await bot.telegram.deleteWebhook();
+  process.exit(0);
+});
 
+// 🚀 INICIA O BOT AQUI (ÚNICO LUGAR)
+(async () => {
+  await bot.telegram.deleteWebhook();
   await bot.launch();
   console.log("🤖 Bot rodando 100%");
 })();
-  process.exit(0);
-});
