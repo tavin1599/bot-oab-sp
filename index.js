@@ -18,7 +18,12 @@ if (!TELEGRAM_TOKEN) {
 }
 
 const bot = new Telegraf(TELEGRAM_TOKEN);
+(async () => {
+  await bot.telegram.deleteWebhook();
 
+  bot.launch();
+  console.log("🤖 Bot rodando");
+})();
 // ========== CONFIG =============
 const HEADLESS = true; // invisível
 const RESULTS_PER_PAGE = 25;
@@ -545,7 +550,3 @@ process.on('SIGTERM', async () => {
   try { if (browser) await browser.close(); } catch(e){}
   process.exit(0);
 });
-
-bot.launch().then(() =>
-  console.log('🤖 Bot TJSP iniciado — invisível, filtro de valor, 7 min')
-);
