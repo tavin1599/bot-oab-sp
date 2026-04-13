@@ -4,11 +4,10 @@
   "description": "Bot Telegram para consultar processos por OAB no TJSP (1º Grau / CPOPG) usando Playwright.",
   "main": "index.js",
   "scripts": {
-  "start": "node index.js",
-  "postinstall": "npx playwright install chromium",
-  "install-playwright": "playwright install chromium",
-  "update-playwright": "playwright install --with-deps"
-}
+    "start": "node index.js",
+    "postinstall": "npx playwright install chromium",
+    "install-playwright": "playwright install chromium",
+    "update-playwright": "playwright install --with-deps"
   },
   "dependencies": {
     "axios": "^1.13.2",
