@@ -18,12 +18,6 @@ if (!TELEGRAM_TOKEN) {
 }
 
 const bot = new Telegraf(TELEGRAM_TOKEN);
-(async () => {
-  await bot.telegram.deleteWebhook();
-
-  await bot.launch(); // ✅ correto
-  console.log("🤖 Bot rodando");
-})();
 // ========== CONFIG =============
 const HEADLESS = true; // invisível
 const RESULTS_PER_PAGE = 25;
@@ -548,5 +542,11 @@ process.on('SIGINT', async () => {
 });
 process.on('SIGTERM', async () => {
   try { if (browser) await browser.close(); } catch(e){}
+  (async () => {
+  await bot.telegram.deleteWebhook();
+
+  await bot.launch();
+  console.log("🤖 Bot rodando 100%");
+})();
   process.exit(0);
 });
