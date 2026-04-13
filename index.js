@@ -21,7 +21,7 @@ const bot = new Telegraf(TELEGRAM_TOKEN);
 (async () => {
   await bot.telegram.deleteWebhook();
 
-  bot.launch();
+  await bot.launch(); // ✅ correto
   console.log("🤖 Bot rodando");
 })();
 // ========== CONFIG =============
